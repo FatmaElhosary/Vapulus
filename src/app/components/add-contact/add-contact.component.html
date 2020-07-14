@@ -1,0 +1,52 @@
+
+
+<div class="container py-5">
+
+<form class="example-form m-auto border p-5" [formGroup]="userInformationForm"
+(ngSubmit)="addContact()">
+  <div class="form-group">
+    <label class="image-upload-container text-center">
+      <span class="text-center " data-toggle="tooltip" data-placement="bottom" title="Select Profile Image">
+          <i class="fas fa-user fa-6x" *ngIf="!previewUrl"></i>
+          <div class="image-preview mb-3" *ngIf="previewUrl">
+            <img [src]="previewUrl" height="100px" width="100px" class="img-fluid" />
+          </div>
+      </span>
+      <h3>Add Photo</h3>
+      <input type="file" name="image"
+     formControlName= "image"
+      accept="image/*" (change)="fileProgress($event)"
+      />
+    </label>
+    </div>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="First Name"
+    formControlName="firstName"
+   >
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Last Name" formControlName="lastName" >
+  </mat-form-field>
+  <div class="input-display">
+  <mat-form-field class="w-25" >
+    <mat-select >
+      <mat-option *ngFor="let prefix of phonePrefix" [value]="prefix">
+        {{prefix}}
+      </mat-option>
+    </mat-select>
+
+  </mat-form-field>
+  <mat-form-field class="w-75 ml-2">
+    <input matInput placeholder="5672249" formControlName="mobileNumber">
+  </mat-form-field>
+</div>
+  <mat-form-field class="example-full-width">
+  <input matInput placeholder="Email Address" formControlName="email">
+</mat-form-field>
+<button mat-flat-button
+type="submit"
+[disabled]="!userInformationForm.valid"
+class="example-full-width my-3 " style="background-color: green; color: white;">Add Contact</button>
+<button mat-flat-button color="primary" (click)="goBack()" class="example-full-width">Cancel</button>
+</form>
+</div>

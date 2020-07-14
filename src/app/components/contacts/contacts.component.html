@@ -1,0 +1,63 @@
+<app-search-contact></app-search-contact>
+<app-latest-contacts></app-latest-contacts>
+<section id="contacts">
+  <div class="container" *ngIf="contacts.length > 0">
+    <div class="alphabets float-right">
+      <ul *ngFor="let char of alphabets">
+        <a ng-click="do($event); $event.preventDefault()" >
+          <li class="mt-3">{{ char }}</li>
+        </a>
+      </ul>
+    </div>
+     <div class="cust-style" *ngFor="let contact of result">
+      <h4 *ngIf="contact.key" [id]="contact.key">{{contact.key}}</h4>
+      <div class="media mt-3 pb-2" *ngFor="let con of contact.contacts">
+        <img
+          class="align-self-start mr-3 img-fluid img-thumbnail"
+          src="assets/media/img_lisa.jpg"
+          alt="profile image"
+          width="100px"
+          height="100px"
+        />
+
+        <div class="media-body">
+          <h5 class="mt-3">{{ con.firstName }} {{ con.lastName }}</h5>
+          <p>{{ con.email }}</p>
+        </div>
+        <hr />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <div *ngFor="let k of result">
+  {{result[k]}}
+</div>
+<div *ngFor="let k of contactList">
+  {{k.firstName}} {{k.key}}
+</div>
+<p>Loop Through Object using KeyValue Pipe and *ngFor</p>
+ -->
+<!-- <div *ngFor="let item of contactList | keyvalue">
+  {{item | json }}
+  Object Key:{{item.key}} and Object Value:{{item.value}}
+</div> -->
+<!-- <p>Loop Through Maps using KeyValue Pipe</p><br>
+ -->
+ <!-- <div *ngFor="let contact of contactList | keyvalue">
+  {{contact.key}}:{{contact.contactList}}
+</div>
+ -->
+
+ <table *ngFor="let user of contactList" class="cotainer">
+	<tr>
+		<td>{{user.key}}</td>
+		<td>:</td>
+	</tr>
+	<tr *ngFor="let qualifica of user.contacts">
+		<td></td>
+		<td> {{ qualifica.firstName }} </td>
+   <!--  <div *ngFor="let subject of qualifica.subjects" >
+      {{subject.title}}
+    </div> -->
+	</tr>
+</table>

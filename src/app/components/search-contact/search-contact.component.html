@@ -1,0 +1,33 @@
+<section id="search-contact">
+  <div class="container mt-5">
+  <!-- <input #searchBox id="search-box" (input)="search(searchBox.value)" /> -->
+  <div class="input-group">
+   <!--  <i class="fa fa-search" ></i> -->
+    <input  #searchBox
+    [(ngModel)]='searchBox.value'
+    (input)="search(searchBox.value)"
+    type="text" class="form-control" placeholder='&nbsp; &#xF002; Search Contact ' style="font-family:Arial, Font Awesome" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+  <div class="search-result">
+    <div  *ngIf="contacts">
+      <div class="cust-style" *ngFor="let contact of contacts | searchContact:searchBox.value" >
+      <div class="media mt-2 pb-2" >
+        <img class="align-self-start mr-3 img-fluid img-thumbnail" src="assets/media/img_brian.jpg" alt="profile image" width="100px" height="100px">
+        <div class="media-body">
+          <h5 class="mt-3">{{contact.firstName}} {{contact.lastName}}
+          </h5>
+          <p>{{contact.email}}</p>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+  <div class="add-contact clearfix">
+    <h2 class="float-left"> Add New Contacts</h2>
+    <i
+    routerLink="/add-contact"
+    class="fa fa-plus fa-2x float-right my-3 pr-3"></i>
+  </div>
+</div>
+</section>

@@ -1,1 +1,62 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$vapulus-task-primary: mat-palette($mat-indigo);
+$vapulus-task-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$vapulus-task-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$vapulus-task-theme: mat-light-theme($vapulus-task-primary, $vapulus-task-accent, $vapulus-task-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($vapulus-task-theme);
+
 /* You can add global styles to this file, and also import other style files */
+$backgroundcolor:#E4E4E4;
+$hcolor:#F8F8F8;
+$textColor:#F8F8F8;
+$headingcolor:#333333;
+h4,h2{
+  background-color: $backgroundcolor;
+  padding: 10px 15px;
+}
+*{
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img{
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.cust-style {
+  border-bottom: 1px solid $backgroundcolor
+   !important;
+   &:last-child{
+       border-bottom: 0 !important;
+   }
+ }
+ul{
+  margin-bottom: 0 !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
