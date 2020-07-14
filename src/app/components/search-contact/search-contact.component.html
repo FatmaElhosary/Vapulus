@@ -4,7 +4,7 @@
   <div class="input-group">
    <!--  <i class="fa fa-search" ></i> -->
     <input  #searchBox
-    [(ngModel)]='searchBox.value'
+    [(ngModel)]='term'
     (input)="search(searchBox.value)"
     type="text" class="form-control" placeholder='&nbsp; &#xF002; Search Contact ' style="font-family:Arial, Font Awesome" aria-label="Username" aria-describedby="basic-addon1">
   </div>

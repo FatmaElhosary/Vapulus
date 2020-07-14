@@ -20,7 +20,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SearchContactComponent } from './components/search-contact/search-contact.component';
 import { SearchContactPipe } from './pipes/search-contact.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +46,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
     }),
+    ScrollToModule.forRoot(),
 
   ],
   providers: [],

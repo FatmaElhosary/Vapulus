@@ -11,8 +11,9 @@ import { Contact } from 'src/app/interfaces/contact';
   styleUrls: ['./search-contact.component.scss']
 })
 export class SearchContactComponent implements OnInit {
-   contacts$:Observable<Contact[]>;
-   contacts;
+  // contacts$:Observable<Contact[]>;
+   contacts=[];
+   term:string;
   private searchTerms = new Subject<string>();
   //term:string;
   constructor(private _ContactsService:ContactsService) {
@@ -26,7 +27,7 @@ search(term: string): void {
   this.searchTerms.next(term);
 }
   ngOnInit(): void {
-   this.contacts$ = this.searchTerms.pipe(
+   /* this.contacts$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
       debounceTime(300),
 
@@ -35,7 +36,7 @@ search(term: string): void {
 
       // switch to new search observable each time the term changes
       switchMap((term: string) => this._ContactsService.searchContacts(term)),
-    );
+    );*/
   }
 
 }
