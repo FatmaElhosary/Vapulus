@@ -3,7 +3,7 @@
 
   <h4> Latest Contact</h4>
   <div  *ngIf="contacts.length>0">
-  <div class="cust-style" *ngFor="let contact of contacts" >
+  <div class="cust-style" @fade *ngFor="let contact of contacts" >
   <div class="media mt-2 pb-2" >
     <img class="align-self-start mr-3 img-fluid img-thumbnail" src="assets/media/img_danielle.jpg" alt="profile image" width="100px" height="100px">
     <div class="media-body">

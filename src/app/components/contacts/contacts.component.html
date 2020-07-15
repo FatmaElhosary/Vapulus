@@ -14,7 +14,9 @@
     </div>
      <div  *ngFor="let contact of result">
       <h4 *ngIf="contact.key" [id]="contact.key">{{contact.key}}</h4>
-      <div class="media cust-style mt-3 pb-2" *ngFor="let con of contact.contacts">
+      <div class="media cust-style mt-3 pb-2"
+      @fade
+      *ngFor="let con of contact.contacts">
         <img
           class="align-self-start mr-3 img-fluid img-thumbnail"
           src="assets/media/img_lisa.jpg"

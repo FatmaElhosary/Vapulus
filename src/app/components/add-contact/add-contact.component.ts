@@ -13,6 +13,7 @@ import { ContactsService } from 'src/app/services/contacts.service';
 
 export class AddContactComponent implements OnInit {
   phonePrefix:string[]=["+02","+44"];
+  selectedprefix;
   fileData: File = null;
   previewUrl:any = null;
   contacts:Contact[]=[];
@@ -23,6 +24,7 @@ export class AddContactComponent implements OnInit {
     'firstName': [null, [Validators.required,Validators.minLength(3)]],
     'lastName': [null, [Validators.required,Validators.minLength(3)]],
     'email':[null,[Validators.required,Validators.email]],
+    'teleprefix':['',Validators.required],
     'mobileNumber':[null,[Validators.required]],
     'image':[null,[]],
     });

@@ -4,6 +4,7 @@
 
 <form class="example-form m-auto border p-5" [formGroup]="userInformationForm"
 (ngSubmit)="addContact()">
+<h1 class="pb-2 text-muted">Add New Contact</h1>
   <div class="form-group">
     <label class="image-upload-container text-center">
       <span class="text-center " data-toggle="tooltip" data-placement="bottom" title="Select Profile Image">
@@ -29,8 +30,8 @@
   </mat-form-field>
   <div class="input-display">
   <mat-form-field class="w-25" >
-    <mat-select >
-      <mat-option *ngFor="let prefix of phonePrefix" [value]="prefix">
+    <mat-select placeholder="+44" formControlName="teleprefix">
+      <mat-option *ngFor="let prefix of phonePrefix; index as i" [value]="prefix[i]" >
         {{prefix}}
       </mat-option>
     </mat-select>

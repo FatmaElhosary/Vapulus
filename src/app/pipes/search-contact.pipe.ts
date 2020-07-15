@@ -8,12 +8,12 @@ export class SearchContactPipe implements PipeTransform {
   transform(contacts, term: string): any {
 
     if (!term.trim()) {
-      return [];
+      return null;
     }
     //||item.lastName.toLowerCase().includes(term.toLowerCase())
     if (contacts.length) {
       return contacts.filter((item) =>
-      item.firstName? item.firstName.toLowerCase().includes(term.toLowerCase()):[]
+      item.firstName? item.firstName.toLowerCase().includes(term.toLowerCase()):null
       );
     }
   }

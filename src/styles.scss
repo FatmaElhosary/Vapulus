@@ -36,7 +36,10 @@ h4,h2{
   padding: 10px 15px;
 }
 
-
+p{
+  font-size: 1rem;
+  color:gray;
+}
 *{
   padding:0;
   margin: 0;
@@ -50,11 +53,17 @@ img{
   -o-border-radius: 50%;
 }
 .cust-style {
+  cursor: pointer;
   border-bottom: 2px solid $backgroundcolor
    !important;
    &:last-child{
        border-bottom: 0 !important;
    }
+   h5{
+    font-size: 1.5rem;
+  font-weight: 500;
+  color:gray;
+  }
  }
 ul{
   margin-bottom: 0 !important;

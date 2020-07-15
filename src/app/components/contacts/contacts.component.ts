@@ -1,15 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactsService } from 'src/app/services/contacts.service';
 import { Contact } from 'src/app/interfaces/contact';
-
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
 
 
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
-  styleUrls: ['./contacts.component.scss']
+  styleUrls: ['./contacts.component.scss'],
+  animations: [
+    // animation triggers go here
+trigger('fade',[
+  transition('void=> *',[
+    style({opacity:0}),
+    animate(3000,style({opacity:1}))
+
+  ])
+])
+
+
+  ]
 })
 export class ContactsComponent implements OnInit {
+
+  isOpen = true;
+
+
   contacts:Contact[] =[] ;
   alphabets:string[]=[];
   result=[];
@@ -54,6 +77,12 @@ getSeparatedGroupList(contactList:Contact[]){
       this.alphabets.push(chr);
       }
   }
+
+
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
+
   //////////////////////
 
  /*  objectKeys(result) {
