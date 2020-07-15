@@ -10,7 +10,9 @@
   </div>
   <div class="search-result">
     <div  *ngIf="contacts">
-      <div class="cust-style" *ngFor="let contact of contacts | searchContact:searchBox.value" >
+      <div class="cust-style"
+      @fade
+      *ngFor="let contact of contacts | searchContact:searchBox.value" >
       <div class="media mt-2 pb-2" >
         <img class="align-self-start mr-3 img-fluid img-thumbnail" src="assets/media/img_brian.jpg" alt="profile image" width="100px" height="100px">
         <div class="media-body">

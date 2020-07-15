@@ -5,10 +5,20 @@ import {
 } from 'rxjs/operators';
 import { ContactsService } from 'src/app/services/contacts.service';
 import { Contact } from 'src/app/interfaces/contact';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 @Component({
   selector: 'app-search-contact',
   templateUrl: './search-contact.component.html',
-  styleUrls: ['./search-contact.component.scss']
+  styleUrls: ['./search-contact.component.scss'],
+  animations:[
+    trigger('fade',[
+      state('void',style({opacity:0})),
+      transition(':enter,:leave',[
+       animate(1000)
+      ])
+
+    ])
+  ]
 })
 export class SearchContactComponent implements OnInit {
   // contacts$:Observable<Contact[]>;
