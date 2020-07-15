@@ -14,3 +14,11 @@ export let fade=trigger('fade',[
   ])
 ])
 
+export let apear=trigger('apear',[
+  transition('void=> *',[
+    style({transform:'translateY(-5px)'}),
+    animate(1000,style({transform:'translateY(5px)'}))
+
+  ])
+])
+

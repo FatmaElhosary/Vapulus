@@ -4,10 +4,14 @@ import {FormBuilder, Validators} from '@angular/forms'
 import { HttpClient } from '@angular/common/http';
 import { Contact } from 'src/app/interfaces/contact';
 import { ContactsService } from 'src/app/services/contacts.service';
+import { apear } from 'src/app/animations';
 @Component({
   selector: 'app-add-contact',
   templateUrl: './add-contact.component.html',
-  styleUrls: ['./add-contact.component.scss']
+  styleUrls: ['./add-contact.component.scss'],
+  animations:[
+    apear
+  ]
 })
 
 
