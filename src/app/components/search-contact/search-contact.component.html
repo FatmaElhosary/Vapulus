@@ -9,10 +9,11 @@
     type="text" class="form-control" placeholder='&nbsp; &#xF002; Search Contact ' style="font-family:Arial, Font Awesome" aria-label="Username" aria-describedby="basic-addon1">
   </div>
   <div class="search-result">
-    <div  *ngIf="contacts">
+    <div  ><!--  *ngIf="contacts$" -->
       <div class="cust-style"
       @fade
-      *ngFor="let contact of contacts | searchContact:searchBox.value" >
+
+      *ngFor="let contact of contacts$ | async " >
       <div class="media mt-2 pb-2" >
         <img class="align-self-start mr-3 img-fluid img-thumbnail" src="assets/media/img_brian.jpg" alt="profile image" width="100px" height="100px">
         <div class="media-body">

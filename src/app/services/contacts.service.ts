@@ -46,7 +46,7 @@ export class ContactsService {
         // if not search term, return empty contacts array.
         return of([]);
       }
-      return this.http.get<Contact[]>(`${this.baseURL}/?name=${term}`).pipe(
+      return this.http.get<Contact[]>(`${this.baseURL}/?firstName=${term}`).pipe(
         tap(x => x.length ?
            console.log(`found contacts matching "${term}"`) :
            console.log(`no contacts matching "${term}"`)),

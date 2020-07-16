@@ -21,23 +21,23 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class SearchContactComponent implements OnInit {
-  // contacts$:Observable<Contact[]>;
+   contacts$:Observable<Contact[]>;
    contacts=[];
    term:string;
   private searchTerms = new Subject<string>();
-  //term:string;
-  constructor(private _ContactsService:ContactsService) {
-    this._ContactsService.getAllContacts().subscribe(contact=>{
-      this.contacts=contact;
 
-    })
+  constructor(private _ContactsService:ContactsService) {
+   /*  this._ContactsService.getAllContacts().subscribe(contact=>{
+      this.contacts =contact;
+
+    }) */
   }
 // Push a search term into the observable stream.
 search(term: string): void {
   this.searchTerms.next(term);
 }
   ngOnInit(): void {
-   /* this.contacts$ = this.searchTerms.pipe(
+   this.contacts$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
       debounceTime(300),
 
@@ -46,7 +46,7 @@ search(term: string): void {
 
       // switch to new search observable each time the term changes
       switchMap((term: string) => this._ContactsService.searchContacts(term)),
-    );*/
+    );
   }
 
 }
